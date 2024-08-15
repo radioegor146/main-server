@@ -325,9 +325,9 @@
             window.previousLinkValue = $(this).val();
             let name = null;
 
-            let match = $(this).val().match(/https?:\/\/mods\.factorio\.com\/mod\/([^\s\/#]{1,})/i);
+            let match = $(this).val().match(/https?:\/\/mods\.factorio\.com\/mod\/([^\s\/#\?]{1,})/i);
             if (match == null) {
-                match = $(this).val().match(/https?:\/\/mods\.factorio\.com\/mods\/([^\s\/]{1,})\/([^\s\/#]{1,})/i);
+                match = $(this).val().match(/https?:\/\/mods\.factorio\.com\/mods\/([^\s\/]{1,})\/([^\s\/#\?]{1,})/i);
                 if (match != null) {
                     name = match[2];
                 }
