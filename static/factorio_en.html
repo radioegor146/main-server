@@ -30,11 +30,6 @@
             'main': {
                 baseUrl: 'https://mods-storage.re146.dev/',
                 title: 'Main Cloudflare R2 storage'
-            },
-            'hetzner-mirror': {
-                baseUrl: 'https://official-factorio-mirror.re146.dev/',
-                title: 'Hetzner Cloud official mirror',
-                fallback: true
             }
         };
     </script>
@@ -98,7 +93,7 @@
             <div class="top-margin main-block">
                 <div class="alert alert-warning">
                     <p><b>Important information</b></p>
-                    Recently, the developers of Factorio have been tightening the possibility of the existence of this resource (they ban accounts that are used). So any interruptions in the speed of updating mods are inevitable, so if something does not work for you, do not hesitate to write (preferably to <a href="https://t.me/radioegor146 ">Telegram</a>)
+                    Recently, the developers of Factorio have been tightening the possibility of the existence of this resource (they ban accounts that are used, send abuses to hoster). So any interruptions in the speed of updating mods are inevitable, so if something does not work for you, do not hesitate to write (preferably to <a href="https://t.me/radioegor146 ">Telegram</a>)
                 </div>
                 <div class="row">
                     <div class="input-group col-10">
@@ -493,6 +488,9 @@
             (() => {
                 try {
                     window.mirror = window.localStorage.getItem('mirror_id') ?? 'main';
+                    if (!window.mirrors[window.mirror]) {
+                        window.mirror = 'main';
+                    }
                     window.localStorage.setItem('mirror_id', window.mirror);
                 } catch (e) {
                     // ignore
