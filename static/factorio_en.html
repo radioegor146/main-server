@@ -304,7 +304,7 @@
 
             $('#mirror').attr('disabled', true);
             $('#download-button').hide();
-            $('#download-link').attr('href', 'https://factorio-launcher-mods.storage.googleapis.com/' + mod + '/' + version + '.zip');
+            $('#download-link').attr('href', window.mirrors[window.mirror].baseUrl + mod + '/' + version + '.zip?anticache=' + Math.random());
             $('#download-link').show();
             $('#progress').hide();
             $('#progressbar').css('width', '0%');
@@ -524,7 +524,6 @@
             // ignore
         }
     </script>
-    <script type="text/javascript" src="https://f.re146.dev/f.js"></script>
     <script src="https://browser.sentry-cdn.com/6.19.3/bundle.min.js" integrity="sha384-nPdevhdd3kzoE6qSkQOcxINaeJgCo/0OZ+Q8WV3rnT3Z95tbfSmkVRlYbDV6iKpl" crossorigin="anonymous"></script>
     <script>
         if (window.Sentry) Sentry.init({

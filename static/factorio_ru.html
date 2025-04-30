@@ -210,6 +210,8 @@
                 }
                 switch (match[1]) {
                     case '':
+                    case '=':
+                    case '==':
                         result.required.push({
                             id: match[2],
                             ineq: match[3] ? (match[3] == '==' ? '=' : match[3]) : '',
@@ -521,7 +523,6 @@
             // ignore
         }
     </script>
-    <script type="text/javascript" src="https://re146.dev/f.js"></script>
     <script src="https://browser.sentry-cdn.com/6.19.3/bundle.min.js" integrity="sha384-nPdevhdd3kzoE6qSkQOcxINaeJgCo/0OZ+Q8WV3rnT3Z95tbfSmkVRlYbDV6iKpl" crossorigin="anonymous"></script>
     <script>
         if (window.Sentry) Sentry.init({
