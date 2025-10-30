@@ -92,7 +92,10 @@
             <div class="top-margin main-block">
                 <div class="alert alert-warning">
                     <p><b>Важная информация</b></p>
-                    В последнее время разработчики Factorio ужесточают возможность существования данного ресурса (банят аккаунты благодаря которым он существует, подают Abuse на хостинг). Увы, но перебои в скорости обновления модов неизбежны, поэтому в случае если у вас что-то не работает - не стесняйтесь писать (лучше в <a href="https://t.me/radioegor146">Telegram</a>)
+                    В последнее время в России Роскомнадзор блокирует доступ к Cloudflare R2 (сервис который я использую
+                    для хранения и раздачи модов), поэтому попробуйте скачать с использованием VPN. В случае если у вас
+                    всё ещё что-то не работает - не стесняйтесь писать (лучше в <a
+                        href="https://t.me/radioegor146">Telegram</a>)
                 </div>
                 <div class="row">
                     <div class="input-group col-10">
@@ -176,9 +179,9 @@
             <span class="text-muted">&copy; radioegor146 2019 - 2024</span>
             <span class="text-muted float-right"><a href="/"><b>Контакты</b></a></span>
             <span class="text-muted float-right" style="margin-left: 10px; margin-right: 10px;"><img width="24px"
-                src="https://www.tampermonkey.net/images/icon.png" />
-            Теперь есть удобное расширение для TamperMonkey: <a target="_blank"
-                href="/factorio/mods/free-factorio-mods-downloader-ru.user.js">установить</a></span>
+                    src="https://www.tampermonkey.net/images/icon.png" />
+                Теперь есть удобное расширение для TamperMonkey: <a target="_blank"
+                    href="/factorio/mods/free-factorio-mods-downloader-ru.user.js">установить</a></span>
         </div>
     </footer>
     <script type="text/javascript">
@@ -246,8 +249,8 @@
         })
 
         async function digest(buffer) {
-            const hashBuffer = await crypto.subtle.digest('SHA-1', buffer); 
-            const hashArray = Array.from(new Uint8Array(hashBuffer));       
+            const hashBuffer = await crypto.subtle.digest('SHA-1', buffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
             const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
             return hashHex;
         }
@@ -275,7 +278,7 @@
                     $('#mod-link').attr('disabled', false);
                     $('#reload-mod-info').attr('disabled', false);
                     return;
-                }                    
+                }
                 let button = $('#hidden-downloader')[0];
                 button.href = window.mirrors[window.mirror].baseUrl + name + '/' + version + '.zip?anticache=' + Math.random();
                 button.click();
@@ -368,7 +371,7 @@
                     }
 
                     const data = await response.json();
-                    
+
                     if (window.lastModName != fetchedModName)
                         return;
                     try {
@@ -523,7 +526,9 @@
             // ignore
         }
     </script>
-    <script src="https://browser.sentry-cdn.com/6.19.3/bundle.min.js" integrity="sha384-nPdevhdd3kzoE6qSkQOcxINaeJgCo/0OZ+Q8WV3rnT3Z95tbfSmkVRlYbDV6iKpl" crossorigin="anonymous"></script>
+    <script src="https://browser.sentry-cdn.com/6.19.3/bundle.min.js"
+        integrity="sha384-nPdevhdd3kzoE6qSkQOcxINaeJgCo/0OZ+Q8WV3rnT3Z95tbfSmkVRlYbDV6iKpl"
+        crossorigin="anonymous"></script>
     <script>
         if (window.Sentry) Sentry.init({
             dsn: "https://cdd2ccfbcee242409eb16534d627ddf4@o1180919.ingest.sentry.io/6307427",
